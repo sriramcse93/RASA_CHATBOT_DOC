@@ -1,0 +1,99 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- goodbye
+- affirm
+- deny
+- mood_great
+- mood_unhappy
+- bot_challenge
+- utter_corona_intro
+- corona_intro
+- corona_spread
+- corona_food_spread
+- corona_spread_india
+- weather
+- city
+- vegetarian
+- non-veg
+- food
+entities:
+- LINK
+- FORCAST
+slots:
+  FORCAST:
+    type: text
+responses:
+  utter_greet:
+  - text: Hey! How are you?
+  utter_cheer_up:
+  - text: 'Here is something to cheer you up:'
+    image: https://i.imgur.com/nGF1K8f.jpg
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_corona_intro:
+  - text: Coronaviruses are a group of related viruses that cause diseases in mammals
+      and birds. In humans, coronaviruses cause respiratory tract infections that
+      can be mild, such as some cases of the common cold (among other possible causes,
+      predominantly rhinoviruses), and others that can be lethal, such as SARS, MERS,
+      and COVID-19.
+  utter_corona_spread:
+  - text: This virus was first detected in Wuhan City, Hubei Province, China. The
+      spreading from person-to-person. It’s important to note that person-to-person
+      spread can happen on a continuum. Some viruses are highly contagious (like measles),
+      while other viruses are less so. The virus that causes COVID-19 is spreading
+      from person-to-person. Someone who is actively sick with COVID-19 can spread
+      the illness to others. That is why we recommend that these patients be isolated
+      either in the hospital or at home (depending on how sick they are) until they
+      are better and no longer pose a risk of infecting others.
+  utter_corona_food_spread:
+  - text: Coronaviruses are generally thought to be spread from person-to-person through
+      respiratory droplets. Currently there is no evidence to support transmission
+      of COVID-19 associated with food. Before preparing or eating food it is important
+      to always wash your hands with soap and water for 20 seconds for general food
+      safety. Throughout the day wash your hands after blowing your nose, coughing
+      or sneezing, or going to the bathroom.
+  utter_corona_spread_india:
+  - text: Refer the link to find corona virus in [India](https://www.covid19india.org/)
+  utter_city:
+  - text: which city you want to check for?
+  utter_temp:
+  - text: Today's temperature is {temp} degree Celcius.
+  utter_food:
+  - text: what would you perfer
+    buttons:
+    - title: vegetarian
+      payload: /vegetarian
+    - title: non_vegetarian
+      payload: /non-veg
+  utter_vegetarian:
+  - text: Vegetarian Menu List
+    image: https://wangsgfc.files.wordpress.com/2012/11/vegetarian-menu-32.jpg
+  utter_non_veg:
+  - text: Non-Vegetarian Menu List
+    image: http://www.catchway.us/model/Restaurant%20/dharanimasters.com/img/non-veg-menu-1.jpg
+actions:
+- utter_greet
+- utter_cheer_up
+- utter_did_that_help
+- utter_happy
+- utter_goodbye
+- utter_iamabot
+- utter_corona_intro
+- utter_corona_spread
+- utter_corona_food_spread
+- utter_corona_spread_india
+- utter_city
+- utter_temp
+- action_weather_api
+- utter_vegetarian
+- utter_non_veg
+- utter_food
